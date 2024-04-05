@@ -114,11 +114,7 @@ void DecimalToBinary(vector<int>* vec, unsigned int decimal) {
   }
 }
 
-void OctToBinary(vector<int>* vec) {
-  cout << "\nType your number: ";
-  int input {0};
-  cin >> input;
-
+void OctToBinary(vector<int>* vec, size_t input) {
   vector<int> temp_vec = IntToVector(input);
 
   for(int i: temp_vec) {
@@ -147,14 +143,11 @@ int main() {
   vector<int> vec {}; 
   vector<int> *vec_ptr = &vec;
 
-  
-
   size_t decimal {0};
-
   size_t choice {0};
+
   cout << "1. Decimal\n2. Oct\n3. Binary\n4. Hex\n";
   while (true){
-    
     cout << "\nWhat is your input going to be: ";
     cin >> choice;
 
@@ -167,7 +160,10 @@ int main() {
         break;
       }
       case 2: {
-        OctToBinary(vec_ptr);
+        cout << "\nType your number: ";
+        int oct_input {0};
+        cin >> oct_input;
+        OctToBinary(vec_ptr, oct_input);
         decimal = BinaryToDecimal(vec_ptr); 
         break;
         }

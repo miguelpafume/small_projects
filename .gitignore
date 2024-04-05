@@ -1,2 +1,6 @@
 *.exe
 .vscode
+.vs
+*.sln
+*.vcxproj*
+x64
