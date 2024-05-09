@@ -96,9 +96,13 @@ vector<int> IntToVector(long long unsigned int x) {
 //Returns a decimal value (size_t) with based on the binary input
 size_t BinaryToDecimal(const vector<int>* const vec) {
   size_t decimal_value {0};
+  std::cout << std::endl;
   for(int i {static_cast<int>((*vec).size())-1}; i >= 0; i--) {
     if((*vec).at((*vec).size()-i-1) == 1) {
       decimal_value += pow(2, i);
+      std::cout << "1 * 2^" << i << " = " << pow(2, i) << std::endl;
+    } else {
+      std::cout << "0 * 2^" << i << " = 0" << std::endl;
     }
   }
   return decimal_value;
